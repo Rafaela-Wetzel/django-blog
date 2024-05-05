@@ -73,7 +73,12 @@
     </nav>
 
     <main class="flex-shrink-0 main-bg">
-
+    <p class="text-end m-3">
+        {% if user.is_anonymous %}
+        You are not logged in
+        {% else %}
+        You are logged in as {{ user }}</p>
+        {% endif %}
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
